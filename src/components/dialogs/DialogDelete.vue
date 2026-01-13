@@ -27,7 +27,7 @@
 </template>
 <script setup>
 import { useTaskStore } from "@/stores/task";
-import { defineProps } from "Vue";
+import { defineProps } from "vue";
 
 const taskStore = useTaskStore();
 const props = defineProps({
