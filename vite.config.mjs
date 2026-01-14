@@ -16,38 +16,44 @@ import { VitePWA } from "vite-plugin-pwa";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    VueRouter(),
+    Layouts(),
+
     Vue({
       template: { transformAssetUrls },
     }),
     VitePWA({
-  registerType: "autoUpdate",
-  includeAssets: ["favicon.svg"],
-  manifest: {
-    name: "Lista de Tarefas",
-    short_name: "Lista de Tarefas",
-    description: "Lista de tarefas produzida com Vue.js",
-    theme_color: "#1976d2",
-    background_color: "#ffffff",
-    display: "standalone",
-    start_url: "/",
-    icons: [
-      {
-        src: "/pwa-192x192.png",
-        sizes: "192x192",
-        type: "image/png",
+      registerType: "autoUpdate",
+      includeAssets: [
+        "favicon.ico",
+        "favicon.svg",
+        "favicon-96x96.png",
+        "apple-touch-icon.png",
+      ],
+      manifest: {
+        name: "Lista de Tarefas",
+        short_name: "Lista de Tarefas",
+        description: "Lista de tarefas produzida com Vue.js",
+        theme_color: "#1976d2",
+        background_color: "#ffffff",
+        display: "standalone",
+        start_url: "/",
+        icons: [
+          {
+            src: "/pwa-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "/pwa-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+        ],
       },
-      {
-        src: "/pwa-512x512.png",
-        sizes: "512x512",
-        type: "image/png",
-      },
-    ],
-  },
-}),
+    }),
 
     // https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin#readme
-    VueRouter(),
-    Layouts(),
     Vuetify({
       autoImport: true,
       styles: {
