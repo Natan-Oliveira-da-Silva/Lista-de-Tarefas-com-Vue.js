@@ -11,6 +11,7 @@ import Vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 // Utilities
 import { defineConfig } from "vite";
 import { fileURLToPath, URL } from "node:url";
+import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -20,6 +21,7 @@ export default defineConfig({
     Vue({
       template: { transformAssetUrls },
     }),
+    VitePWA({ registerType: 'autoUpdate' }),
     // https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin#readme
     Vuetify({
       autoImport: true,
