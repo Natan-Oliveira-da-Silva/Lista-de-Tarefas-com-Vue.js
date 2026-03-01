@@ -1,79 +1,66 @@
-# Vuetify (Default)
+# Lista de Tarefas
 
-This is the official scaffolding tool for Vuetify, designed to give you a head start in building your new Vuetify application. It sets up a base template with all the necessary configurations and standard directory structure, enabling you to begin development without the hassle of setting up the project from scratch.
+[Acesse o projeto](https://lista-de-tarefas-com-vue.netlify.app/)
 
-## ❗️ Important Links
+Projeto realizado durante o curso Curso completo Vue JS 3, Vuetify, Pinia, Vue Router e mais, da Udemy. Trata-se de um site de lista de tarefas. Para sua realização, usei Vue 3, Vuetify e Pinia. O site armazena as tarefas do usuário no Local Storage. 
 
-- 📄 [Docs](https://vuetifyjs.com/)
-- 🚨 [Issues](https://issues.vuetifyjs.com/)
-- 🏬 [Store](https://store.vuetifyjs.com/)
-- 🎮 [Playground](https://play.vuetifyjs.com/)
-- 💬 [Discord](https://community.vuetifyjs.com)
+## O que se Encontra na Lista de Tarefas
 
-## 💿 Install
+* Formulários de login e cadastro com validações dos dados inseridos pelo usuário.
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="./assets/readme-images/image1.png" alt="Validação no formulário de login" width="300px"><br>
+      <sub>Validação no formulário de login</sub>
+    </td>
+    <td align="center">
+      <img src="./assets/readme-images/image2.png" alt="Validação no formulário de cadastro" width="300px"><br>
+      <sub>Validação no formulário de cadastro</sub>
+    </td>
+  </tr>
+</table>
 
-Set up your project using your preferred package manager. Use the corresponding command to install the dependencies:
 
-| Package Manager                                                | Command        |
-|---------------------------------------------------------------|----------------|
-| [yarn](https://yarnpkg.com/getting-started)                   | `yarn install` |
-| [npm](https://docs.npmjs.com/cli/v7/commands/npm-install)     | `npm install`  |
-| [pnpm](https://pnpm.io/installation)                          | `pnpm install` |
-| [bun](https://bun.sh/#getting-started)                        | `bun install`  |
 
-After completing the installation, your environment is ready for Vuetify development.
 
-## ✨ Features
 
-- 🖼️ **Optimized Front-End Stack**: Leverage the latest Vue 3 and Vuetify 3 for a modern, reactive UI development experience. [Vue 3](https://v3.vuejs.org/) | [Vuetify 3](https://vuetifyjs.com/en/)
-- 🗃️ **State Management**: Integrated with [Pinia](https://pinia.vuejs.org/), the intuitive, modular state management solution for Vue.
-- 🚦 **Routing and Layouts**: Utilizes Vue Router for SPA navigation and vite-plugin-vue-layouts for organizing Vue file layouts. [Vue Router](https://router.vuejs.org/) | [vite-plugin-vue-layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts)
-- ⚡ **Next-Gen Tooling**: Powered by Vite, experience fast cold starts and instant HMR (Hot Module Replacement). [Vite](https://vitejs.dev/)
-- 🧩 **Automated Component Importing**: Streamline your workflow with unplugin-vue-components, automatically importing components as you use them. [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
 
-These features are curated to provide a seamless development experience from setup to deployment, ensuring that your Vuetify application is both powerful and maintainable.
+* Página principal (home) que, ao se clicar em um dos imóveis apresentados, exibe um modal com as informações do imóvel selecionado.
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="./assets/readme-images/image4.png" alt="Página principal (home)" width="400px"><br>
+      <sub>Página principal (home)</sub>
+    </td>
+    <td align="center">
+      <img src="./assets/readme-images/image5.png" alt="Página principal (home) com modal aberto" width="400px"><br>
+      <sub>Página principal (home) com modal aberto</sub>
+    </td>
+  </tr>
+</table>
 
-## 💡 Usage
 
-This section covers how to start the development server and build your project for production.
+* Tela de página em construção, que é exibida quando o usuário clica em alguma funcionalidade ainda não implementada, como o botão 'Comprar' que aparece no modal ou qualquer um dos itens da seção Nossos Serviços.
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="./assets/readme-images/image3.png" alt="Página de funcionalidade ainda não implementada" width="400px"><br>
+      <sub>Página de funcionalidade ainda não implementada</sub>
+    </td>
+  </tr>
+</table>
 
-### Starting the Development Server
 
-To start the development server with hot-reload, run the following command. The server will be accessible at [http://localhost:3000](http://localhost:3000):
-
-```bash
-yarn dev
+## Informações Técnicas sobre o Projeto
+* Para entrar na aplicação pelo formulário de login, pode-se usar o e-mail example@gmail.com e a senha batatinha123 ou qualquer outro conjunto de credenciais constante no arquivo [users.json](./users.json).
+* Existem duas fontes de consulta de dados de usuários: o arquivo [users.json](./users.json), que foi adicionado na raiz do projeto para armazenar dados de usuários, e o localStorage, que armazena informações de usuários cadastrados. 
+* A funcionalidade de cadastro foi implementada nesse projeto. O cadastro armazena informações do usuário cadastrado no localStorage (exemplo: "usuario@email.com":"senha123"). A linha código abaixo consta no arquivo [createAccount.js](./scripts/createAccount.js) e mostra como a funcionalidade de cadastro armazena a senha e o e-mail do usuário cadastrado no localStorage:
+```js
+localStorage.setItem(email, password);
 ```
-
-(Repeat for npm, pnpm, and bun with respective commands.)
-
-> Add NODE_OPTIONS='--no-warnings' to suppress the JSON import warnings that happen as part of the Vuetify import mapping. If you are on Node [v21.3.0](https://nodejs.org/en/blog/release/v21.3.0) or higher, you can change this to NODE_OPTIONS='--disable-warning=5401'. If you don't mind the warning, you can remove this from your package.json dev script.
-
-### Building for Production
-
-To build your project for production, use:
-
-```bash
-yarn build
+* Quando um usuário tenta fazer login, o sistema checa se o conjunto de e-mail e senha fornecidos no formulário de login consta nas duas fontes de consulta de informações de usuários: o localStorage e o arquivo [users.json](./users.json).
+* No localStorage também é armazenada a situação do usuário quanto ao login ("logged":true ou "logged":false).
+* Eu implementei um mecanismo que impede o usuário de acessar as páginas de erro 404 e home sem estar logado. A linha de código abaixo está presente nos arquivos [home.js](./scripts/home.js) e [notFound.js](./scripts/notFound.js) e checa se o usuário está logado ou não assim que o código JavaScript da página Home é executado. Se o usuário não estiver logado ao tentar acessar a páginas de erro 404 ou home, ele será redirecionado automaticamente para a página de login ([index.html](./index.html)).
+```js
+if (localStorage.getItem("logged") !== "true") window.location.href = "../index.html"
 ```
-
-(Repeat for npm, pnpm, and bun with respective commands.)
-
-Once the build process is completed, your application will be ready for deployment in a production environment.
-
-## 💪 Support Vuetify Development
-
-This project is built with [Vuetify](https://vuetifyjs.com/en/), a UI Library with a comprehensive collection of Vue components. Vuetify is an MIT licensed Open Source project that has been made possible due to the generous contributions by our [sponsors and backers](https://vuetifyjs.com/introduction/sponsors-and-backers/). If you are interested in supporting this project, please consider:
-
-- [Requesting Enterprise Support](https://support.vuetifyjs.com/)
-- [Sponsoring John on Github](https://github.com/users/johnleider/sponsorship)
-- [Sponsoring Kael on Github](https://github.com/users/kaelwd/sponsorship)
-- [Supporting the team on Open Collective](https://opencollective.com/vuetify)
-- [Becoming a sponsor on Patreon](https://www.patreon.com/vuetify)
-- [Becoming a subscriber on Tidelift](https://tidelift.com/subscription/npm/vuetify)
-- [Making a one-time donation with Paypal](https://paypal.me/vuetify)
-
-## 📑 License
-[MIT](http://opensource.org/licenses/MIT)
-
-Copyright (c) 2016-present Vuetify, LLC
