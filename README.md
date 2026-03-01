@@ -57,7 +57,7 @@ Projeto realizado durante o curso Curso completo Vue JS 3, Vuetify, Pinia, Vue R
   <tr>
     <td align="center">
       <img src="./src/assets/readme-images/7.png" alt="Página Sobre" width="800px"><br>
-      <sub>Página Sobre que apresenta as tecnologias usadas no projeto.</sub>
+      <sub>A página apresenta as tecnologias usadas no projeto.</sub>
     </td>
   </tr>
 </table>
