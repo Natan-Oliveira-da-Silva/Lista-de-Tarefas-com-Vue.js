@@ -6,16 +6,12 @@ Projeto realizado durante o curso Curso completo Vue JS 3, Vuetify, Pinia, Vue R
 
 ## O que se Encontra na Lista de Tarefas
 
-* Formulários de login e cadastro com validações dos dados inseridos pelo usuário.
+* Tela Inicial
 <table align="center">
   <tr>
     <td align="center">
-      <img src="./assets/readme-images/image1.png" alt="Validação no formulário de login" width="300px"><br>
-      <sub>Validação no formulário de login</sub>
-    </td>
-    <td align="center">
-      <img src="./assets/readme-images/image2.png" alt="Validação no formulário de cadastro" width="300px"><br>
-      <sub>Validação no formulário de cadastro</sub>
+      <img src="./src/assets/readme-images/3.png" alt="Tela inicial" width="800px"><br>
+      <sub>Nessa tela, o usuário vê, cria e conclui tarefas.</sub>
     </td>
   </tr>
 </table>
@@ -25,42 +21,32 @@ Projeto realizado durante o curso Curso completo Vue JS 3, Vuetify, Pinia, Vue R
 
 
 
-* Página principal (home) que, ao se clicar em um dos imóveis apresentados, exibe um modal com as informações do imóvel selecionado.
+* Validação da Entrada do Usuário
 <table align="center">
   <tr>
     <td align="center">
-      <img src="./assets/readme-images/image4.png" alt="Página principal (home)" width="400px"><br>
-      <sub>Página principal (home)</sub>
-    </td>
-    <td align="center">
-      <img src="./assets/readme-images/image5.png" alt="Página principal (home) com modal aberto" width="400px"><br>
-      <sub>Página principal (home) com modal aberto</sub>
+      <img src="./src/assets/readme-images/1.png" alt="Validação da Entrada do Usuário" width="400px"><br>
+      <sub>Validação ao se criar tarefa</sub>
     </td>
   </tr>
 </table>
 
 
-* Tela de página em construção, que é exibida quando o usuário clica em alguma funcionalidade ainda não implementada, como o botão 'Comprar' que aparece no modal ou qualquer um dos itens da seção Nossos Serviços.
+* Mensagens de Confirmação
 <table align="center">
   <tr>
     <td align="center">
-      <img src="./assets/readme-images/image3.png" alt="Página de funcionalidade ainda não implementada" width="400px"><br>
-      <sub>Página de funcionalidade ainda não implementada</sub>
+      <img src="./src/assets/readme-images/4.png" alt="Edição de tarefa" width="400px"><br>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./src/assets/readme-images/5.png" alt="Edição de tarefa" width="400px"><br>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./src/assets/readme-images/6.png" alt="Edição de tarefa" width="400px"><br>
     </td>
   </tr>
 </table>
-
-
-## Informações Técnicas sobre o Projeto
-* Para entrar na aplicação pelo formulário de login, pode-se usar o e-mail example@gmail.com e a senha batatinha123 ou qualquer outro conjunto de credenciais constante no arquivo [users.json](./users.json).
-* Existem duas fontes de consulta de dados de usuários: o arquivo [users.json](./users.json), que foi adicionado na raiz do projeto para armazenar dados de usuários, e o localStorage, que armazena informações de usuários cadastrados. 
-* A funcionalidade de cadastro foi implementada nesse projeto. O cadastro armazena informações do usuário cadastrado no localStorage (exemplo: "usuario@email.com":"senha123"). A linha código abaixo consta no arquivo [createAccount.js](./scripts/createAccount.js) e mostra como a funcionalidade de cadastro armazena a senha e o e-mail do usuário cadastrado no localStorage:
-```js
-localStorage.setItem(email, password);
-```
-* Quando um usuário tenta fazer login, o sistema checa se o conjunto de e-mail e senha fornecidos no formulário de login consta nas duas fontes de consulta de informações de usuários: o localStorage e o arquivo [users.json](./users.json).
-* No localStorage também é armazenada a situação do usuário quanto ao login ("logged":true ou "logged":false).
-* Eu implementei um mecanismo que impede o usuário de acessar as páginas de erro 404 e home sem estar logado. A linha de código abaixo está presente nos arquivos [home.js](./scripts/home.js) e [notFound.js](./scripts/notFound.js) e checa se o usuário está logado ou não assim que o código JavaScript da página Home é executado. Se o usuário não estiver logado ao tentar acessar a páginas de erro 404 ou home, ele será redirecionado automaticamente para a página de login ([index.html](./index.html)).
-```js
-if (localStorage.getItem("logged") !== "true") window.location.href = "../index.html"
-```
